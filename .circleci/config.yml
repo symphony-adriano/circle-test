@@ -18,6 +18,10 @@ jobs:
           command: |
             echo 'ODIO TIBCO'
             echo 'NEVER FORGET'
+      - run:
+          name: The Second Step
+          command: |
+            ls -al
 
 # Invoke jobs via workflows
 workflows:
