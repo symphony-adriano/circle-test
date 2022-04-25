@@ -3,7 +3,7 @@ version: 2.1
 
 # Define a job to be invoked later in a workflow.
 jobs:
-  say-hello:
+  test-job:
     # Specify the execution environment.
     docker:
       - image: cimg/node:17.2.0
@@ -14,11 +14,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: The First Step
+          command: |
+            echo 'ODIO TIBCO'
+            echo 'NEVER FORGET'
 
 # Invoke jobs via workflows
 workflows:
-  say-hello-workflow:
+  test-workflow:
     jobs:
-      - say-hello
+      - test-job
